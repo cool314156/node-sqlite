@@ -1,0 +1,9 @@
+{
+    "watch": [
+      "./"
+    ],
+    "ignore": [
+      "node_modules/**",
+      "dist/*"
+    ]
+  }

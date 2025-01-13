@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/views/system/index/index.js"],"names":["page"],"mappings":"kHAAA,wBAEeA","file":"js/chunk-2d0db813.093399f1.js","sourcesContent":["import page from './page'\n\nexport default page\n"],"sourceRoot":""}
