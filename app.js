@@ -634,7 +634,7 @@ app.all('/tongji', function (req, res) { //查询数据
   })
 
 })
-const PORT = 80;
+const PORT = 8088;
 app.listen(PORT, () => {
   console.log(`服务已启动 端口是:${PORT}`);
 });
