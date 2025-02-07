@@ -336,7 +336,8 @@ app.all('/aud', function (req, res) {  //数据增删改
           res.json({
             code: 1,
             message: '新增成功',
-            count: resul[1]
+            count: resul[1],
+            data:aesEncryptObj2Obj('ok')
           });
         } else {
           res.json({
@@ -376,7 +377,8 @@ app.all('/aud', function (req, res) {  //数据增删改
           res.json({
             code: 1,
             message: '删除成功',
-            count: resul
+            count: resul,
+            data:aesEncryptObj2Obj('ok')
           });
           //console.log(result);
           //return false;
@@ -422,7 +424,8 @@ app.all('/aud', function (req, res) {  //数据增删改
           res.json({
             code: 1,
             message: '修改成功',
-            count: resul[1]
+            count: resul[1],
+            data:aesEncryptObj2Obj('ok')
           });
         } else {
           res.json({
@@ -450,7 +453,8 @@ app.all('/aud', function (req, res) {  //数据增删改
           res.json({
             code: 1,
             message: '修改成功',
-            count: resul[1]
+            count: resul[1],
+            data:aesEncryptObj2Obj('ok')
           });
         } else {
           res.json({
