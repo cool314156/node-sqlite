@@ -35,9 +35,11 @@ const aesDecryptText = function (word) { // 解密
 };
 
 const random = function(N) {return Math.random().toString(36).substring(2, N)};
+const connectionString = `mysql://jiandan_grewshopon:bb63ce563a9adc5ad72c42acb4fb9a172a024172@juy2o.h.filess.io:3307/jiandan_grewshopon`
 
 module.exports = {
     aesEncryptObj2Obj,
     aesDecryptText,
-    random
+    random,
+    connectionString
   };
