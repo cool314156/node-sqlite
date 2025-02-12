@@ -180,7 +180,7 @@ app.all('/query', async function (req, res) { //查询数据
   let sql = ``;
   let countsql = ``
   if (lm) {
-    sql = ` SELECT  '${lm}' FROM ${sj} WHERE ${tj} LIMIT ${ts} OFFSET ${(fy-1)*ts}`;
+    sql = ` SELECT  ${lm} FROM ${sj} WHERE ${tj} LIMIT ${ts} OFFSET ${(fy-1)*ts}`;
     countsql = ` SELECT  count(*) FROM ${sj} WHERE ${tj} `;
   } else if (lm == undefined) {
     if (nr) {

@@ -3,26 +3,29 @@ var sqlite3 = require('sqlite3');
 var file = './test.db';//这里写的就是数据库文件的路径
 // 从环境变量中读取数据库配置
 
-// const sequelize = new Sequelize({
-//   storage: file,
-//   dialect: 'sqlite' /* one of 'mysql' | 'mariadb' | 'postgres' | 'mssql' */,
-//   define: {
-//     timestamps: false,
-//     freezeTableName: true
-//   },
-//   dialectModule: sqlite3 // 就是这里，必须要指明使用哪个模块来操作，否则是会报错了
+const sequelize = new Sequelize({
+  storage: file,
+  dialect: 'sqlite' /* one of 'mysql' | 'mariadb' | 'postgres' | 'mssql' */,
+  define: {
+    timestamps: false,
+    freezeTableName: true
+  },
+  dialectModule: sqlite3 // 就是这里，必须要指明使用哪个模块来操作，否则是会报错了
+});
+//  const [host, port] = 'juy2o.h.filess.io:3307'.split(":");
+//  const connectionString = `mysql://jiandan_grewshopon:bb63ce563a9adc5ad72c42acb4fb9a172a024172@juy2o.h.filess.io:3307/jiandan_grewshopon`
+
+// const sequelize = new Sequelize(connectionString, {
+//   logging: true,
 // });
- const [host, port] = 'juy2o.h.filess.io:3307'.split(":");
- const connectionString = `mysql://jiandan_grewshopon:bb63ce563a9adc5ad72c42acb4fb9a172a024172@juy2o.h.filess.io:3307/jiandan_grewshopon`
+
+
 // const sequelize = new Sequelize("jiandan_grewshopon", 'jiandan_grewshopon', 'bb63ce563a9adc5ad72c42acb4fb9a172a024172', {
 //   host,
 //   port,
 //   dialect: "mysql" /* one of 'mysql' | 'mariadb' | 'postgres' | 'mssql' */,
 //   logging: true,
 // });
-const sequelize = new Sequelize(connectionString, {
-  logging: true,
-});
 // 定义数据模型
 
 const users = async function () {
