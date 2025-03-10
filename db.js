@@ -15,9 +15,9 @@ const sequelize = new Sequelize({
 });
 //  const [host, port] = 'juy2o.h.filess.io:3307'.split(":");
 // console.log(process.env.SQL_URL)
-//const connectionString = process.env.SQL_URL
+//const connection = connectionString
 
-// const sequelize = new Sequelize(connectionString, {
+// const sequelize = new Sequelize(connection, {
 //   logging: true,
 // });
 

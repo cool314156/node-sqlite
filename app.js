@@ -583,7 +583,7 @@ app.all('/tongji', function (req, res) { //查询数据
   } else if (req.headers['x-token']) {
     token = req.headers['x-token'];
   }
-  console.log(reqs);
+  // console.log(reqs);
   let tj = reqs.tj;
   let sj = reqs.tablename;
   let tjl = reqs.reqType;
