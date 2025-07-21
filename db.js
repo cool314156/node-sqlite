@@ -4,15 +4,15 @@ var sqlite3 = require('sqlite3');
 var file = './test.db';//这里写的就是数据库文件的路径
 // 从环境变量中读取数据库配置
 
-// const sequelize = new Sequelize({
-//   storage: file,
-//   dialect: 'sqlite' /* one of 'mysql' | 'mariadb' | 'postgres' | 'mssql' */,
-//   define: {
-//     timestamps: false,
-//     freezeTableName: true
-//   },
-//   dialectModule: sqlite3 // 就是这里，必须要指明使用哪个模块来操作，否则是会报错了
-// });
+const sequelize = new Sequelize({
+  storage: file,
+  dialect: 'sqlite' /* one of 'mysql' | 'mariadb' | 'postgres' | 'mssql' */,
+  define: {
+    timestamps: false,
+    freezeTableName: true
+  },
+  dialectModule: sqlite3 // 就是这里，必须要指明使用哪个模块来操作，否则是会报错了
+});
 // const sequelize = new Sequelize({
 //   database: 'neondb',
 //   username: 'neondb_owner',
@@ -27,13 +27,13 @@ var file = './test.db';//这里写的就是数据库文件的路径
 //   },
 // });
 
- const [host, port] = 'mysql2.sqlpub.com:3307'.split(":");
+//  const [host, port] = 'mysql2.sqlpub.com:3307'.split(":");
 
-const sequelize = new Sequelize('jiandan', 'jiandan', 'la244vrgcjuyU0Bp', {
-  host,
-  port,
-  dialect: "mysql" /* one of 'mysql' | 'mariadb' | 'postgres' | 'mssql' */,
-});
+// const sequelize = new Sequelize('jiandan', 'jiandan', 'la244vrgcjuyU0Bp', {
+//   host,
+//   port,
+//   dialect: "mysql" /* one of 'mysql' | 'mariadb' | 'postgres' | 'mssql' */,
+// });
 // 定义数据模型
 
 const users = async function () {
