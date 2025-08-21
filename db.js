@@ -4,36 +4,29 @@ var sqlite3 = require('sqlite3');
 var file = './test.db';//这里写的就是数据库文件的路径
 // 从环境变量中读取数据库配置
 
-// const sequelize = new Sequelize({
-//   storage: file,
-//   dialect: 'sqlite' /* one of 'mysql' | 'mariadb' | 'postgres' | 'mssql' */,
-//   define: {
-//     timestamps: false,
-//     freezeTableName: true
-//   },
-//   dialectModule: sqlite3 // 就是这里，必须要指明使用哪个模块来操作，否则是会报错了
-// });
-// const sequelize = new Sequelize({
-//   database: 'neondb',
-//   username: 'neondb_owner',
-//   password: 'npg_I3MZLzvCt9Rx',
-//   host: 'ep-rapid-sunset-a1oiy01d-pooler.ap-southeast-1.aws.neon.tech', // 例如 'localhost'
-//   port: 5432, // PostgreSQL 默认端口
-//   dialect: 'postgres',
-//   dialectModule: require('pg'), // 指定使用 pg 模块
-//   define: {
-//     timestamps: false,
-//     freezeTableName: true
-//   },
-// });
+let sequelize
 
- const [host, port] = 'mysql2.sqlpub.com:3307'.split(":");
+const sql = {
+  sqlite: new Sequelize({
+    storage: file,
+    dialect: 'sqlite' ,
+    define: {
+      timestamps: false,
+      freezeTableName: true
+    },
+    dialectModule: sqlite3 // 就是这里，必须要指明使用哪个模块来操作，否则是会报错了
+  }),
+  mysql: new Sequelize('jiandan', 'jiandan', 'la244vrgcjuyU0Bp', {
+    host:'mysql2.sqlpub.com',
+    port:3307,
+    dialect: "mysql" 
+  }),
+  pgsql: new Sequelize('postgresql://neondb_owner:npg_I3MZLzvCt9Rx@ep-rapid-sunset-a1oiy01d-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'),//连接到pgsql
 
-const sequelize = new Sequelize('jiandan', 'jiandan', 'la244vrgcjuyU0Bp', {
-  host,
-  port,
-  dialect: "mysql" /* one of 'mysql' | 'mariadb' | 'postgres' | 'mssql' */,
-});
+}
+
+sequelize = sql['mysql']
+
 // 定义数据模型
 
 const users = async function () {
