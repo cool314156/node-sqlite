@@ -8,11 +8,10 @@ app.use(express.json());
 
 // 使用cors中间件 解决跨域问题
 app.use(cors({
-  origin: ['http://localhost:8080', 'https://node-sqlite-cool3141567250-igz9bhp4.leapcell.dev'],
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // 允许的HTTP方法
-  allowedHeaders: ['Content-Type', 'Authorization'], // 允许的请求头
-  optionsSuccessStatus: 200 // 预检请求的结果状态
+  origin: ['http://localhost:8080','https://node-sqlite-cool3141567250-igz9bhp4.leapcell.dev/'], // 允许的前端域名
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'x-token'], // 添加 x-token
+  credentials: true
 }));
 
 var multiparty = require("multiparty");
@@ -26,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get("/", async (req, res) => {
   res.sendFile(path.join(__dirname, "public"));
 });
+
 app.all("/test", (req, res) => {
   let data = {};
   console.log(req.method)
