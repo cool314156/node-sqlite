@@ -6,7 +6,9 @@ const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 // 使用cors中间件 解决跨域问题
-app.use(cors());
+app.use(cors({
+  origin:'https://node-sqlite-cool3141567250-igz9bhp4.leapcell.dev'
+}));
 var multiparty = require("multiparty");
 var fs = require('fs');
 var dateFormat = require("dateformat");
