@@ -5,14 +5,13 @@ const app = express();
 //解决post请求无法获取参数的问题
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
 // 使用cors中间件 解决跨域问题
 app.use(cors({
-  origin:'https://node-sqlite-cool3141567250-igz9bhp4.leapcell.dev',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // 允许的HTTP方法
-  allowedHeaders: ['Content-Type', 'Authorization'], // 允许的请求头
-  credentials: true, // 是否允许发送Cookie
-  optionsSuccessStatus: 200 // 预检请求的结果状态码
+  origin: ['http://localhost:8080', 'https://node-sqlite-cool3141567250-igz9bhp4.leapcell.dev'],
+  credentials: true
 }));
+
 var multiparty = require("multiparty");
 var fs = require('fs');
 var dateFormat = require("dateformat");
