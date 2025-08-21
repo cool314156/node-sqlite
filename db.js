@@ -27,7 +27,7 @@ const sql = {
 
 }
 
-sequelize = sql['pgsql']
+sequelize = sql['mysql']
 
 // 定义数据模型
 
