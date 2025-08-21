@@ -9,7 +9,10 @@ app.use(express.json());
 // 使用cors中间件 解决跨域问题
 app.use(cors({
   origin: ['http://localhost:8080', 'https://node-sqlite-cool3141567250-igz9bhp4.leapcell.dev'],
-  credentials: true
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // 允许的HTTP方法
+  allowedHeaders: ['Content-Type', 'Authorization'], // 允许的请求头
+  optionsSuccessStatus: 200 // 预检请求的结果状态
 }));
 
 var multiparty = require("multiparty");
