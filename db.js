@@ -27,7 +27,7 @@ const sql = {
 
 }
 
-sequelize = sql['mysql']
+sequelize = sql['sqlite']
 
 // 定义数据模型
 
