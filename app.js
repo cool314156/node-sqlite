@@ -13,7 +13,6 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization', 'x-token'], // 添加 x-token
   credentials: true
 }));
-
 var multiparty = require("multiparty");
 var fs = require('fs');
 var dateFormat = require("dateformat");
