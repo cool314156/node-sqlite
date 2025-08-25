@@ -25,7 +25,7 @@ const sql = {
   pgsql: new Sequelize('postgresql://lwtciqvjyesearvsfntg:rwtlopcljwtdckdaamctcpsqogcuih@9qasp5v56q8ckkf5dc.leapcellpool.com:6438/ftmornnexzonhktpihqy?sslmode=require'),//连接到pgsql 
 }
 
-sequelize = sql['pgsql']
+sequelize = sql['mysql']
 
 // 定义数据模型
 
