@@ -21,8 +21,8 @@ const sql = {
     port:3307,
     dialect: "mysql" 
   }),
-  //pgsql: new Sequelize('postgresql://neondb_owner:npg_I3MZLzvCt9Rx@ep-rapid-sunset-a1oiy01d-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'),//连接到pgsql
-  pgsql: new Sequelize('postgresql://lwtciqvjyesearvsfntg:rwtlopcljwtdckdaamctcpsqogcuih@9qasp5v56q8ckkf5dc.leapcellpool.com:6438/ftmornnexzonhktpihqy?sslmode=require'),//连接到pgsql
+  pgsql: new Sequelize('postgresql://neondb_owner:npg_I3MZLzvCt9Rx@ep-rapid-sunset-a1oiy01d-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'),//连接到pgsql
+  //pgsql: new Sequelize('postgresql://lwtciqvjyesearvsfntg:rwtlopcljwtdckdaamctcpsqogcuih@9qasp5v56q8ckkf5dc.leapcellpool.com:6438/ftmornnexzonhktpihqy?sslmode=require'),//连接到pgsql
   
 
 }
