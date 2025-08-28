@@ -61,6 +61,9 @@ app.all('/api/AccountLogin', function (req, res) {//登录验证
   let sql = ` SELECT * FROM 用户 WHERE 用户名= '${mz}' AND 密码 = '${mm}'`;
   console.log(sql)
   let result = listObjects()
+  result.then((res) => {
+    console.log(res)
+  })
   query(sql).then((resul) => {
     if (resul.length > 0) {
       res.json({
