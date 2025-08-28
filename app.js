@@ -18,6 +18,7 @@ var fs = require('fs');
 var dateFormat = require("dateformat");
 const { users, sequelize, QueryTypes, query, add, del, update } = require("./db");
 const { aesEncryptObj2Obj, aesDecryptText, random } = require("./tool");
+const { listObjects, putObject,deleteObjects, getObject  } = require("./files");
 app.use(express.static(path.join(__dirname, 'public')));
 
 
@@ -59,6 +60,7 @@ app.all('/api/AccountLogin', function (req, res) {//登录验证
   let mm = jm.password;
   let sql = ` SELECT * FROM 用户 WHERE 用户名= '${mz}' AND 密码 = '${mm}'`;
   console.log(sql)
+  let result = listObjects()
   query(sql).then((resul) => {
     if (resul.length > 0) {
       res.json({
@@ -71,7 +73,7 @@ app.all('/api/AccountLogin', function (req, res) {//登录验证
             token: random(32),
             user_id: resul[0].id,
             account: resul[0].用户名,
-            //password:resul[0].密码,
+            files: result
 
           },
           token: random(32),
@@ -79,6 +81,7 @@ app.all('/api/AccountLogin', function (req, res) {//登录验证
           username: resul[0].用户名,
           uuid: resul[0].uuid,
           photo: resul[0].照片,
+          files: result
 
         })
 
